@@ -1,5 +1,7 @@
-module.exports = function (ev) {
+module.exports = function (ev, opts) {
+    if (!opts) opts = {};
     if (typeof ev === 'number') ev = { which: ev };
+    
     var code = ev.which || ev.keyCode;
     var c = String.fromCharCode(code);
     
@@ -10,6 +12,7 @@ module.exports = function (ev) {
     if (code < 32 && code !== 8 && !/\s/.test(c)) return;
     
     if (code >= 37 && code <= 40) {
+        if (opts.arrows === false) return undefined;
         c = '\x1b[' + String.fromCharCode({
             38: 65, 40: 66, 39: 67, 37: 68
         }[code]);
@@ -48,10 +51,7 @@ module.exports = function (ev) {
         code = code - 64;
         c = String.fromCharCode(code);
     }
-    if (code === 7 || code === 8) {
-        return c;
-    }
-    else return c;
-    
-    return undefined;
+    if (code === 7 && opts['delete'] === false) return undefined;
+    if (code === 8 && opts.backspace === false) return undefined;
+    return c;
 };
