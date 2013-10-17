@@ -53,5 +53,6 @@ module.exports = function (ev, opts) {
     }
     if (code === 7 && opts['delete'] === false) return undefined;
     if (code === 8 && opts.backspace === false) return undefined;
+    if (code === 13) return '\r\n';
     return c;
 };
