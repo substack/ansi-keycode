@@ -1,0 +1,33 @@
+{
+  "name": "ansi-keycode",
+  "version": "0.0.0",
+  "description": "map browser keycodes to ansi characters and escape sequences",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "tape": "~1.0.4"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/ansi-keycode.git"
+  },
+  "homepage": "https://github.com/substack/ansi-keycode",
+  "keywords": [
+    "ansi",
+    "keycode",
+    "event",
+    "ev.which",
+    "ev.keycode",
+    "browser"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
+}
